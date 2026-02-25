@@ -1,0 +1,6 @@
+﻿Description:
+Usage:
+  GoTo.Tests [options]
+Options:
+  -?, -h, --help  Show help and usage information
+  --version       Show version information
