@@ -1,6 +1,6 @@
 using GoTo.Commands;
 
-namespace GoTo.Tests;
+namespace GoTo.Tests.Commands;
 
 public class GoToCommandTests
 {

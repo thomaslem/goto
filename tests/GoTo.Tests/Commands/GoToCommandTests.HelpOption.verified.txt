@@ -1,8 +1,10 @@
 ﻿Description:
 Usage:
-  GoTo.Tests [<alias>] [options]
+  GoTo.Tests [<alias>] [command] [options]
 Arguments:
   <alias>  Directory alias to navigate to
 Options:
   -?, -h, --help  Show help and usage information
   --version       Show version information
+Commands:
+  add <alias> <path>  Save an alias for a directory
