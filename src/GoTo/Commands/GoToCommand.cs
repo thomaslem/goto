@@ -17,6 +17,7 @@ public sealed class GoToCommand : RootCommand
     public GoToCommand(IAnsiConsole console, IAliasStore aliasStore)
     {
         Arguments.Add(_alias);
+        Subcommands.Add(new AddCommand(aliasStore));
         
         SetAction(result =>
         {

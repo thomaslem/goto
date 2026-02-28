@@ -35,7 +35,7 @@ internal class AliasStore : IAliasStore
     public void Add(string alias, string folderPath)
     {
         var aliases = Load();
-        aliases.Add(alias, folderPath);
+        aliases[alias] = folderPath;
         Save(aliases);
     }
     
