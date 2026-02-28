@@ -12,7 +12,7 @@ public static class TestConsole
             ColorSystem = ColorSystemSupport.NoColors,
             Interactive = InteractionSupport.No
         });
-        console.Profile.Width = 1000;
+        console.Profile.Width = 1000; // Prevent newlines in test results
         return console;
     }
     
