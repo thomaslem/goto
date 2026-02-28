@@ -1,2 +1,1 @@
-Error: directory does not exist: 
-{path}
+Error: directory does not exist: {path}
