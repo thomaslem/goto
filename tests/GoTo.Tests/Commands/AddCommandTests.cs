@@ -8,7 +8,7 @@ public class AddCommandTests
     public async Task HelpOption()
     {
         await new GoToCommand(TestConsole.Create(), new FakeAliasStore())
-            .Parse("add --help")
+            .Parse(["add", "--help"])
             .InvokeAsync();
 
         await Verify(TestConsole.GetOutput());
