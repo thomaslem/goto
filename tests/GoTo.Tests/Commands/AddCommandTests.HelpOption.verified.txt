@@ -1,0 +1,10 @@
+Description:
+  Save an alias for a directory
+Usage:
+  GoTo.Tests [<alias>] add <alias> [<path>] [options]
+Arguments:
+  <alias>  Directory alias to navigate to
+  <alias>  Name of the alias
+  <path>   Directory path (defaults to current directory)
+Options:
+  -?, -h, --help  Show help and usage information

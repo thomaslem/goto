@@ -19,28 +19,28 @@ public sealed class AddCommand : Command
         Description = "Directory path (defaults to current directory)"
     };
     
-    public AddCommand(IAliasStore aliasStore) : base("add", "Save an alias for a directory")
+    public AddCommand(IAnsiConsole console, IAliasStore aliasStore) : base("add", "Save an alias for a directory")
     {
         Arguments.Add(_alias);
         Arguments.Add(_path);
-        
+
         SetAction(result =>
         {
             var alias = result.GetRequiredValue(_alias);
             var path = result.GetValue(_path);
-            
+
             var fullPath = path is not null
                 ? Path.GetFullPath(path)
                 : Directory.GetCurrentDirectory();
 
             if (!Directory.Exists(fullPath))
             {
-                AnsiConsole.MarkupLineInterpolated($"[red]Error: directory does not exist: {fullPath}[/]");
+                console.MarkupLineInterpolated($"[red]Error: directory does not exist: {fullPath}[/]");
                 return 1;
             }
 
             aliasStore.Add(alias, fullPath);
-            AnsiConsole.MarkupLineInterpolated($"[green]Added:[/] [cyan]{alias}[/] → {fullPath}");
+            console.MarkupLineInterpolated($"[green]Added:[/] [cyan]{alias}[/] → {fullPath}");
             return 0;
         });
     }
