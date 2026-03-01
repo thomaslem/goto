@@ -19,7 +19,7 @@ public sealed class AddCommand : Command
         Description = "Directory path (defaults to current directory)"
     };
     
-    public AddCommand(IAnsiConsole console, IAliasStore aliasStore) : base("add", "Save an alias for a directory")
+    public AddCommand(IAnsiConsole console, IAliasStore aliasStore) : base("add", "Add or update a directory alias")
     {
         Arguments.Add(_alias);
         Arguments.Add(_path);

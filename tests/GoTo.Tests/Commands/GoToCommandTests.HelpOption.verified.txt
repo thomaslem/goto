@@ -7,4 +7,4 @@ Options:
   -?, -h, --help  Show help and usage information
   --version       Show version information
 Commands:
-  add <alias> <path>  Save an alias for a directory
+  add <alias> <path>  Add or update a directory alias

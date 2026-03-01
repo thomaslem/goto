@@ -1,5 +1,5 @@
 Description:
-  Save an alias for a directory
+  Add or update a directory alias
 Usage:
   GoTo.Tests [<alias>] add <alias> [<path>] [options]
 Arguments:
