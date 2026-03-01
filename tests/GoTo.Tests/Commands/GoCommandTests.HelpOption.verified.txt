@@ -1,0 +1,8 @@
+Description:
+  Navigate to a directory alias
+Usage:
+  GoTo.Tests go <alias> [options]
+Arguments:
+  <alias>  Directory alias to navigate to
+Options:
+  -?, -h, --help  Show help and usage information

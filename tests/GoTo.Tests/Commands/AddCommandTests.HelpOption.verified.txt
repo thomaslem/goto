@@ -1,9 +1,8 @@
 Description:
   Add or update a directory alias
 Usage:
-  GoTo.Tests [<alias>] add <alias> [<path>] [options]
+  GoTo.Tests add <alias> [<path>] [options]
 Arguments:
-  <alias>  Directory alias to navigate to
   <alias>  Name of the alias
   <path>   Directory path (defaults to current directory)
 Options:

@@ -8,17 +8,16 @@ namespace GoTo.Commands;
 
 public sealed class AddCommand : Command
 {
-    private readonly Argument<string> _alias = new ("alias")
+    private readonly Argument<string> _alias = new("alias")
     {
         Description = "Name of the alias"
     };
-    
+
     private readonly Argument<string?> _path = new("path")
     {
-        Arity = ArgumentArity.ZeroOrOne,
-        Description = "Directory path (defaults to current directory)"
+        Arity = ArgumentArity.ZeroOrOne, Description = "Directory path (defaults to current directory)"
     };
-    
+
     public AddCommand(IAnsiConsole console, IAliasStore aliasStore) : base("add", "Add or update a directory alias")
     {
         Arguments.Add(_alias);
