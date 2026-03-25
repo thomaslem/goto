@@ -63,6 +63,6 @@ internal sealed class AliasStore : IAliasStore
 	private static void Save(Dictionary<string, string> aliases)
 	{
 		Directory.CreateDirectory(FolderPath);
-		File.WriteAllText(FilePath, JsonSerializer.Serialize(aliases, JsonSerializerOptions));
+		File.WriteAllText(FilePath, JsonSerializer.Serialize(aliases, JsonSerializerOptions) + "\n");
 	}
 }
