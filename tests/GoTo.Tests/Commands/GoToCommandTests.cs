@@ -1,5 +1,3 @@
-using GoTo.Commands;
-
 namespace GoTo.Tests.Commands;
 
 public class GoToCommandTests
@@ -7,7 +5,7 @@ public class GoToCommandTests
     [Test]
     public async Task HelpOption()
     {
-        await new GoToCommand(TestConsole.Create(), new FakeAliasStore())
+        await new TestGoToCommand()
             .Parse("--help")
             .InvokeAsync();
 
@@ -17,7 +15,7 @@ public class GoToCommandTests
     [Test]
     public async Task QuestionMarkOption()
     {
-        await new GoToCommand(TestConsole.Create(), new FakeAliasStore())
+        await new TestGoToCommand()
             .Parse("-?")
             .InvokeAsync();
 

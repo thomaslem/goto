@@ -1,4 +1,4 @@
-Description:
+﻿Description:
 Usage:
   GoTo.Tests [command] [options]
 Options:
@@ -7,3 +7,4 @@ Options:
 Commands:
   go <alias>          Navigate to a directory alias
   add <alias> <path>  Add or update a directory alias
+  init                Install the gt shell function into your shell profile

@@ -1,0 +1,7 @@
+﻿Description:
+  Install the gt shell function into your shell profile
+Usage:
+  GoTo.Tests init [options]
+Options:
+  -s, --shell <Bash|PowerShell|Zsh>  Shell type, auto-detected if omitted.
+  -?, -h, --help                     Show help and usage information

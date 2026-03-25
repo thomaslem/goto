@@ -1,0 +1,2 @@
+﻿Installed: gt → /home/test/.profile
+Run: source /home/test/.profile

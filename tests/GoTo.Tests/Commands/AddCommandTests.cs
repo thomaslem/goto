@@ -1,5 +1,3 @@
-using GoTo.Commands;
-
 namespace GoTo.Tests.Commands;
 
 public class AddCommandTests
@@ -7,7 +5,7 @@ public class AddCommandTests
     [Test]
     public async Task HelpOption()
     {
-        await new GoToCommand(TestConsole.Create(), new FakeAliasStore())
+        await new TestGoToCommand()
             .Parse(["add", "--help"])
             .InvokeAsync();
 
@@ -19,7 +17,7 @@ public class AddCommandTests
     {
         var path = Path.Combine(Path.GetTempPath(), "goto-test-nonexistent");
 
-        await new GoToCommand(TestConsole.Create(), new FakeAliasStore())
+        await new TestGoToCommand()
             .Parse(["add", "test", path])
             .InvokeAsync();
 
@@ -34,7 +32,7 @@ public class AddCommandTests
         var dir = Directory.CreateTempSubdirectory("goto-test");
         try
         {
-            await new GoToCommand(TestConsole.Create(), new FakeAliasStore())
+            await new TestGoToCommand()
                 .Parse(["add", "test", dir.FullName])
                 .InvokeAsync();
 
@@ -53,7 +51,7 @@ public class AddCommandTests
     {
         var currentDir = Directory.GetCurrentDirectory();
 
-        await new GoToCommand(TestConsole.Create(), new FakeAliasStore())
+        await new TestGoToCommand()
             .Parse(["add", "test"])
             .InvokeAsync();
 

@@ -1,0 +1,12 @@
+﻿Cannot parse argument 'fish' for option '--shell' as expected type 'GoTo.Shell.ShellType'. Did you mean one of the following?
+Bash
+PowerShell
+Zsh
+
+Description:
+  Install the gt shell function into your shell profile
+Usage:
+  GoTo.Tests init [options]
+Options:
+  -s, --shell <Bash|PowerShell|Zsh>  Shell type, auto-detected if omitted.
+  -?, -h, --help                     Show help and usage information
