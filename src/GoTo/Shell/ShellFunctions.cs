@@ -9,7 +9,6 @@ public static class ShellFunctions
 		ShellType.Bash or ShellType.Zsh =>
 			$$"""
 
-
 			  {{Marker}}
 			  function gt() {
 			      local dir
@@ -21,7 +20,6 @@ public static class ShellFunctions
 			  """,
 		ShellType.PowerShell =>
 			$$"""
-
 
 			  {{Marker}}
 			  function gt {
