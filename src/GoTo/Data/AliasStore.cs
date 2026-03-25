@@ -11,7 +11,7 @@ public interface IAliasStore
 	void Remove(string alias);
 }
 
-internal class AliasStore : IAliasStore
+internal sealed class AliasStore : IAliasStore
 {
 	private const string FolderName = ".goto";
 	private const string FileName = "aliases.json";
