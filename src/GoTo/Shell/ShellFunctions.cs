@@ -11,11 +11,18 @@ public static class ShellFunctions
 
 			  {{Marker}}
 			  function gt() {
-			      local dir
-			      dir=$(goto get "$@")
-			      if [ $? -eq 0 ]; then
-			          cd "$dir"
-			      fi
+			      case "$1" in
+			          add|get|init)
+			              goto "$@"
+			              ;;
+			          *)
+			              local dir
+			              dir=$(goto get "$@")
+			              if [ $? -eq 0 ]; then
+			                  cd "$dir"
+			              fi
+			              ;;
+			      esac
 			  }
 			  """,
 		ShellType.PowerShell =>
@@ -23,9 +30,14 @@ public static class ShellFunctions
 
 			  {{Marker}}
 			  function gt {
-			      $dir = goto get @args
-			      if ($LASTEXITCODE -eq 0) {
-			          Set-Location $dir
+			      $subcommands = @('add', 'get', 'init')
+			      if ($subcommands -contains $args[0]) {
+			          goto @args
+			      } else {
+			          $dir = goto get @args
+			          if ($LASTEXITCODE -eq 0) {
+			              Set-Location $dir
+			          }
 			      }
 			  }
 			  """,
