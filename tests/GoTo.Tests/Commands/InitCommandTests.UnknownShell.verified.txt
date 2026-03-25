@@ -8,5 +8,6 @@ Description:
 Usage:
   GoTo.Tests init [options]
 Options:
-  -s, --shell <Bash|PowerShell|Zsh>  Shell type, auto-detected if omitted.
+  -s, --shell <Bash|PowerShell|Zsh>  Shell type, auto-detected if omitted
+  -p, --print                        Print output to stdout instead of shell profile script
   -?, -h, --help                     Show help and usage information

@@ -10,13 +10,19 @@ public sealed class InitCommand : Command
 {
 	private readonly Option<ShellType?> _shell = new("--shell", "-s")
 	{
-		Description = "Shell type, auto-detected if omitted."
+		Description = "Shell type, auto-detected if omitted"
+	};
+
+	private readonly Option<bool> _print = new("--print", "-p")
+	{
+		Description = "Print output to stdout instead of shell profile script"
 	};
 
 	public InitCommand(IAnsiConsole console, IShellProfile shellProfile)
 		: base("init", "Install the gt shell function into your shell profile")
 	{
 		Options.Add(_shell);
+		Options.Add(_print);
 
 		SetAction(result =>
 		{
@@ -26,6 +32,12 @@ public sealed class InitCommand : Command
 			{
 				console.MarkupLine($"[red]Error: could not detect shell. Use --shell {ShellTypesHint()}.[/]");
 				return 1;
+			}
+
+			if (result.GetValue(_print))
+			{
+				console.WriteLine(ShellFunctions.Get(shell.Value));
+				return 0;
 			}
 
 			var profilePath = shellProfile.GetPath(shell.Value);
