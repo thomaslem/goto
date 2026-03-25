@@ -13,7 +13,7 @@ public static class ShellFunctions
 			  {{Marker}}
 			  function gt() {
 			      local dir
-			      dir=$(goto go "$@")
+			      dir=$(goto get "$@")
 			      if [ $? -eq 0 ]; then
 			          cd "$dir"
 			      fi
@@ -25,7 +25,7 @@ public static class ShellFunctions
 
 			  {{Marker}}
 			  function gt {
-			      $dir = goto go @args
+			      $dir = goto get @args
 			      if ($LASTEXITCODE -eq 0) {
 			          Set-Location $dir
 			      }

@@ -1,7 +1,7 @@
-Description:
-  Navigate to a directory alias
+﻿Description:
+  Get a directory by its alias
 Usage:
-  GoTo.Tests go <alias> [options]
+  GoTo.Tests get <alias> [options]
 Arguments:
   <alias>  Directory alias to navigate to
 Options:

@@ -6,14 +6,14 @@ using Spectre.Console;
 
 namespace GoTo.Commands;
 
-public sealed class GoCommand : Command
+public sealed class GetCommand : Command
 {
 	private readonly Argument<string> _alias = new("alias")
 	{
 		Description = "Directory alias to navigate to"
 	};
 
-	public GoCommand(IAnsiConsole console, IAliasStore aliasStore) : base("go", "Navigate to a directory alias")
+	public GetCommand(IAnsiConsole console, IAliasStore aliasStore) : base("get", "Get a directory by its alias")
 	{
 		Arguments.Add(_alias);
 

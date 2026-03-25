@@ -5,6 +5,6 @@ Options:
   -?, -h, --help  Show help and usage information
   --version       Show version information
 Commands:
-  go <alias>          Navigate to a directory alias
+  get <alias>         Get a directory by its alias
   add <alias> <path>  Add or update a directory alias
   init                Install the gt shell function into your shell profile

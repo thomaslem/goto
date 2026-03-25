@@ -1,12 +1,12 @@
 namespace GoTo.Tests.Commands;
 
-public class GoCommandTests
+public class GetCommandTests
 {
 	[Test]
 	public async Task HelpOption()
 	{
 		await new TestGoToCommand()
-			.Parse(["go", "--help"])
+			.Parse(["get", "--help"])
 			.InvokeAsync();
 
 		await Verify(TestConsole.GetOutput());
@@ -16,7 +16,7 @@ public class GoCommandTests
 	public async Task NonExistingAlias()
 	{
 		await new TestGoToCommand()
-			.Parse(["go", "test"])
+			.Parse(["get", "test"])
 			.InvokeAsync();
 
 		await Verify(TestConsole.GetOutput());
@@ -31,7 +31,7 @@ public class GoCommandTests
 					"test", "/home/test"
 				}
 			}))
-			.Parse(["go", "test"])
+			.Parse(["get", "test"])
 			.InvokeAsync();
 
 		await Verify(TestConsole.GetOutput());
