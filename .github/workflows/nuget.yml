@@ -25,4 +25,4 @@ jobs:
         run: dotnet pack --configuration Release
 
       - name: Push
-        run: dotnet nuget push ./artifacts/package/release --source "https://nuget.pkg.github.com/thomaslem/index.json" --api-key ${{ secrets.GITHUB_TOKEN }} --skip-duplicate
+        run: dotnet nuget push ./artifacts/package/release/ --source "https://nuget.pkg.github.com/thomaslem/index.json" --api-key ${{ secrets.GITHUB_TOKEN }} --skip-duplicate
