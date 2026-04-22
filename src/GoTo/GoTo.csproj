@@ -3,6 +3,11 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <RootNamespace>GoTo</RootNamespace>
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>goto</ToolCommandName>
+    <Version>0.0.1</Version>
+    <Authors>ThomasLem</Authors>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -10,4 +15,8 @@
     <PackageReference Include="Spectre.Console" Version="0.54.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+  
 </Project>
