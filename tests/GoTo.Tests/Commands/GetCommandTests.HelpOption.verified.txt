@@ -1,8 +1,10 @@
 ﻿Description:
   Get a directory by its alias
 Usage:
-  GoTo.Tests get <alias> [options]
+  GoTo.Tests get <alias> [options] [[--] <additional arguments>...]]
 Arguments:
   <alias>  Directory alias to navigate to
 Options:
   -?, -h, --help  Show help and usage information
+Additional Arguments:
+  Arguments passed to the application that is being run.
