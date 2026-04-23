@@ -15,6 +15,8 @@ public sealed class GetCommand : Command
 
 	public GetCommand(IAnsiConsole console, IAliasStore aliasStore) : base("get", "Get a directory by its alias")
 	{
+		TreatUnmatchedTokensAsErrors = false;
+		
 		Arguments.Add(_alias);
 
 		SetAction(result =>
