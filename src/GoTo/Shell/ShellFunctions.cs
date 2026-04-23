@@ -12,7 +12,7 @@ public static class ShellFunctions
 			  {{Marker}}
 			  function gt() {
 			      case "$1" in
-			          add|get|init)
+			          add|get|init|-*)
 			              goto "$@"
 			              ;;
 			          *)
@@ -35,7 +35,7 @@ public static class ShellFunctions
 			  {{Marker}}
 			  function gt {
 			      $subcommands = @('add', 'get', 'init')
-			      if ($subcommands -contains $args[0]) {
+			      if ($subcommands -contains $args[0] -or ($args[0] -like '-*')) {
 			          goto @args
 			      } else {
 			          $dir = goto get $args[0]
