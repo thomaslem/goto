@@ -7,4 +7,5 @@ Options:
 Commands:
   get <alias>         Get a directory by its alias
   add <alias> <path>  Add or update a directory alias
+  list                List all directory aliases
   init                Install the gt shell function into your shell profile

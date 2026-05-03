@@ -13,6 +13,7 @@ public class GoToCommand : RootCommand
 	{
 		Subcommands.Add(new GetCommand(console, aliasStore));
 		Subcommands.Add(new AddCommand(console, aliasStore));
+		Subcommands.Add(new ListCommand(console, aliasStore));
 		Subcommands.Add(new InitCommand(console, shellProfile));
 	}
 }

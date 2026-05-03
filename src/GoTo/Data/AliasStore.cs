@@ -6,6 +6,8 @@ public interface IAliasStore
 {
 	string? Get(string alias);
 
+	IReadOnlyDictionary<string, string> GetAll();
+
 	void Add(string alias, string folderPath);
 
 	void Remove(string alias);
@@ -34,6 +36,8 @@ internal sealed class AliasStore : IAliasStore
 			? folderPath
 			: aliases.FirstOrDefault(a => a.Key.Contains(alias, StringComparison.OrdinalIgnoreCase)).Value;
 	}
+
+	public IReadOnlyDictionary<string, string> GetAll() => Load();
 
 	public void Add(string alias, string folderPath)
 	{

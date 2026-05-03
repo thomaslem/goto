@@ -12,6 +12,9 @@ public class FakeAliasStore(Dictionary<string, string>? aliases = null) : IAlias
 		return value;
 	}
 
+	public IReadOnlyDictionary<string, string> GetAll() =>
+		_aliases;
+
 	public void Add(string alias, string folderPath) =>
 		_aliases.Add(alias, folderPath);
 
