@@ -10,32 +10,36 @@ public static class ShellFunctions
 			$$"""
 
 			  {{Marker}}
+			  _goto_commands=
 			  function gt() {
-			      case "$1" in
-			          add|get|init|list|-*)
-			              goto "$@"
-			              ;;
-			          *)
-			              local dir
-			              dir=$(goto get "$1")
-			              if [ $? -eq 0 ]; then
-			                  cd "$dir"
-			                  if [ $# -gt 1 ]; then
-			                      shift
-			                      "$@"
-			                  fi
+			      if [ -z "$_goto_commands" ]; then
+			          _goto_commands="|$(goto --list-commands | tr '\n' '|')"
+			      fi
+			      if [[ "$1" == -* ]] || [[ "$_goto_commands" == *"|$1|"* ]]; then
+			          goto "$@"
+			      else
+			          local dir
+			          dir=$(goto get "$1")
+			          if [ $? -eq 0 ]; then
+			              cd "$dir"
+			              if [ $# -gt 1 ]; then
+			                  shift
+			                  "$@"
 			              fi
-			              ;;
-			      esac
+			          fi
+			      fi
 			  }
 			  """,
 		ShellType.PowerShell =>
 			$$"""
 
 			  {{Marker}}
+			  $script:_gotoCommands = $null
 			  function gt {
-			      $subcommands = @('add', 'get', 'init', 'list')
-			      if ($subcommands -contains $args[0] -or ($args[0] -like '-*')) {
+			      if ($null -eq $script:_gotoCommands) {
+			          $script:_gotoCommands = goto --list-commands
+			      }
+			      if ($script:_gotoCommands -contains $args[0] -or $args[0] -like '-*') {
 			          goto @args
 			      } else {
 			          $dir = goto get $args[0]

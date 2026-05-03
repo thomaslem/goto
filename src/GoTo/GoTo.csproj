@@ -5,7 +5,7 @@
     <RootNamespace>GoTo</RootNamespace>
     <PackAsTool>true</PackAsTool>
     <ToolCommandName>goto</ToolCommandName>
-    <Version>0.0.4</Version>
+    <Version>0.0.5</Version>
     <Authors>ThomasLem</Authors>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>

@@ -21,4 +21,14 @@ public class GoToCommandTests
 
 		await Verify(TestConsole.GetOutput());
 	}
+
+	[Test]
+	public async Task SubcommandsOption()
+	{
+		await new TestGoToCommand()
+			.Parse("--list-commands")
+			.InvokeAsync();
+
+		await Verify(TestConsole.GetOutput());
+	}
 }
