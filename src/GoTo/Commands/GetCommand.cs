@@ -18,7 +18,7 @@ public sealed class GetCommand : Command
 	{
 		TreatUnmatchedTokensAsErrors = false;
 
-		_alias.CompletionSources.Add(_ => aliasStore.GetAll().Keys.Select(key => new CompletionItem(key)));
+		_alias.CompletionSources.Add(_ => aliasStore.GetAll().Keys.Select(alias => new CompletionItem(alias)));
 
 		Arguments.Add(_alias);
 
