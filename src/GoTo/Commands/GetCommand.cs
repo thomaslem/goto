@@ -1,4 +1,5 @@
 using System.CommandLine;
+using System.CommandLine.Completions;
 
 using GoTo.Data;
 
@@ -16,7 +17,9 @@ public sealed class GetCommand : Command
 	public GetCommand(IAnsiConsole console, IAliasStore aliasStore) : base("get", "Get a directory by its alias")
 	{
 		TreatUnmatchedTokensAsErrors = false;
-		
+
+		_alias.CompletionSources.Add(_ => aliasStore.GetAll().Keys.Select(key => new CompletionItem(key)));
+
 		Arguments.Add(_alias);
 
 		SetAction(result =>
