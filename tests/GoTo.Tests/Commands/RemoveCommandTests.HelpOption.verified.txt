@@ -5,4 +5,5 @@ Usage:
 Arguments:
   <alias>  Name of the alias to remove
 Options:
+  -y, --yes       Skip confirmation prompt
   -?, -h, --help  Show help and usage information

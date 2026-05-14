@@ -1,0 +1,1 @@
+Error: Use -y/--yes to remove in non-interactive mode

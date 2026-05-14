@@ -18,6 +18,18 @@ public class RemoveCommandTests
 		var store = new FakeAliasStore(new Dictionary<string, string> { ["work"] = "/home/user/work" });
 
 		await new TestGoToCommand(aliasStore: store)
+			.Parse(["remove", "--yes", "work"])
+			.InvokeAsync();
+
+		await Verify(TestConsole.GetOutput());
+	}
+
+	[Test]
+	public async Task NonInteractiveWithoutYes()
+	{
+		var store = new FakeAliasStore(new Dictionary<string, string> { ["work"] = "/home/user/work" });
+
+		await new TestGoToCommand(aliasStore: store)
 			.Parse(["remove", "work"])
 			.InvokeAsync();
 
