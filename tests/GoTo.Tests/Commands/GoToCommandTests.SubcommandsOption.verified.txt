@@ -1,4 +1,5 @@
 get
 add
+remove
 list
 init

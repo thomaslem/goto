@@ -1,0 +1,8 @@
+Description:
+  Remove a directory alias
+Usage:
+  GoTo.Tests remove <alias> [options]
+Arguments:
+  <alias>  Name of the alias to remove
+Options:
+  -?, -h, --help  Show help and usage information
