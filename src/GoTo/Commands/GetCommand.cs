@@ -25,7 +25,7 @@ public sealed class GetCommand : Command
 		SetAction(result =>
 		{
 			var alias = result.GetRequiredValue(_alias);
-			var path = aliasStore.Get(alias);
+			var path = aliasStore.Search(alias);
 
 			if (string.IsNullOrWhiteSpace(path))
 			{

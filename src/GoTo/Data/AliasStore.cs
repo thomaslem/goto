@@ -4,7 +4,7 @@ namespace GoTo.Data;
 
 public interface IAliasStore
 {
-	string? Get(string alias);
+	string? Search(string alias);
 
 	IReadOnlyDictionary<string, string> GetAll();
 
@@ -28,7 +28,7 @@ internal sealed class AliasStore : IAliasStore
 		WriteIndented = true
 	};
 
-	public string? Get(string alias)
+	public string? Search(string alias)
 	{
 		var aliases = Load();
 

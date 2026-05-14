@@ -6,7 +6,7 @@ public class FakeAliasStore(Dictionary<string, string>? aliases = null) : IAlias
 {
 	private readonly Dictionary<string, string> _aliases = aliases ?? new Dictionary<string, string>();
 
-	public string? Get(string alias)
+	public string? Search(string alias)
 	{
 		_aliases.TryGetValue(alias, out var value);
 		return value;

@@ -24,7 +24,7 @@ public sealed class RemoveCommand : Command
 		{
 			var alias = result.GetRequiredValue(_alias);
 
-			if (aliasStore.Get(alias) is null)
+			if (aliasStore.Search(alias) is null)
 			{
 				console.MarkupLineInterpolated($"[red]Error: Alias '{alias}' not found[/]");
 				return 1;
