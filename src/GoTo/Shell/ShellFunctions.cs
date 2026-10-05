@@ -46,9 +46,8 @@ public static class ShellFunctions
 			          if ($LASTEXITCODE -eq 0) {
 			              Set-Location $dir
 			              if ($args.Count -gt 1) {
-			                  $cmd = $args[1]
-			                  $cmdArgs = if ($args.Count -gt 2) { $args[2..($args.Count - 1)] } else { @() }
-			                  & $cmd @cmdArgs
+			                  $cmdArgs = @($args | Select-Object -Skip 2)
+			                  & $args[1] @cmdArgs
 			              }
 			          }
 			      }
